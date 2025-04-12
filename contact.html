@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Roboto+Slab:wght@100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="main">
+        <div class="main2">
+            <div class="header">
+              <div class="head">
+              <a href="home.html">HOME</a>
+              <a href="about.html">ABOUT</a>
+              <a href="contact.html" class="active">CONTACT</a>
+              <a href="projects.html">PROJECTS</a>
+              </div>
+              <div class="icons">
+                  <i class="fa-brands fa-facebook fb"></i>
+                  <i class="fa-brands fa-instagram"></i>
+                  <i class="fa-brands fa-youtube yt"></i>
+              </div>
+            </div>
+        </div>
+        <div class="lines"></div>
+
+        <h1>Contact Me</h1>
+
+        <div class="contact-wrapper">
+          <div class="contact-form">
+            <h2>Send a Message</h2>
+            <form>
+              <label for="name">Name</label>
+              <input type="text" id="name" placeholder="Enter your name" required>
+        
+              <label for="email">Email</label>
+              <input type="email" id="email" placeholder="Enter your email" required>
+        
+              <label for="message">Message</label>
+              <textarea id="message" rows="5" placeholder="Write your message here..." required></textarea>
+        
+              <button type="submit">Send</button>
+            </form>
+          </div>
+        
+          <div class="contact-info">
+            <h2>Contact Information</h2>
+            <p><i class="fas fa-envelope"></i> azyl6999@egmail.com</p>
+            <p><i class="fas fa-phone"></i> +63 912 345 6789</p>
+            <p><i class="fas fa-map-marker-alt"></i> Egargo Street, Odiongan Gingoog City, Misamis Oriental</p>
+          </div>
+        </div>
+      <div class="container">
+        <h2>My Address on the Map</h2>
+        <div id="map"></div>
+      </div>
+
+
+      
+  
+      <br>
+      <br>
+      <br>
+      <div class="lines"></div>
+        <div class="main2">
+          <div class="footer">
+              <H4>Azyl 2025 All Rights Reserved</H4>
+          </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+    // Initialize and add the map
+    function initMap() {
+      // The location coordinates for Egargo Street, Purok 2, Odiongan
+      var location = { lat: 8.8485, lng: 125.1659 }; // Replace with exact coordinates if available
+      // Create the map centered at the location with a zoom level of 15
+      var map = L.map('map').setView([location.lat, location.lng], 15);
+      // Set up the OpenStreetMap layer
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+      }).addTo(map);
+      // Optionally, add a marker at the location
+      L.marker([location.lat, location.lng]).addTo(map)
+        .bindPopup("<strong>Egargo Street, Purok 2</strong><br>Odiongan, Gingoog City, Misamis Oriental")
+        .openPopup();
+    }
+    // Call the function to initialize the map
+    initMap();
+    </script>
+
+
+</body>
+</html>
